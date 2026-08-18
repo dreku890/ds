@@ -341,8 +341,10 @@ static void movePlayer(float dx, float dy, float dz)
 		vy = 0.0f;
 	}
 
-	if (px < 0.5f) px = 0.5f;          if (px > WX - 0.5f) px = WX - 0.5f;
-	if (pz < 0.5f) pz = 0.5f;          if (pz > WZ - 0.5f) pz = WZ - 0.5f;
+	if (px < 0.5f) px = 0.5f;
+	if (px > WX - 0.5f) px = WX - 0.5f;
+	if (pz < 0.5f) pz = 0.5f;
+	if (pz > WZ - 0.5f) pz = WZ - 0.5f;
 	if (py < 0.0f) { py = 0.0f; vy = 0.0f; onGround = 1; }
 	if (py > WY + 8.0f) py = WY + 8.0f;
 }
@@ -478,8 +480,10 @@ static void updateAnimals(void)
 			else a->vy = 0.0f;
 		}
 
-		if (a->x < 1.0f) a->x = 1.0f;   if (a->x > WX - 1.0f) a->x = WX - 1.0f;
-		if (a->z < 1.0f) a->z = 1.0f;   if (a->z > WZ - 1.0f) a->z = WZ - 1.0f;
+		if (a->x < 1.0f) a->x = 1.0f;
+		if (a->x > WX - 1.0f) a->x = WX - 1.0f;
+		if (a->z < 1.0f) a->z = 1.0f;
+		if (a->z > WZ - 1.0f) a->z = WZ - 1.0f;
 		if (a->y < 0.0f) a->y = 0.0f;
 	}
 }
@@ -627,8 +631,10 @@ static void updateMobs(void)
 		}
 
 		/* world bounds */
-		if (m->x < 1.0f) m->x = 1.0f;   if (m->x > WX - 1.0f) m->x = WX - 1.0f;
-		if (m->z < 1.0f) m->z = 1.0f;   if (m->z > WZ - 1.0f) m->z = WZ - 1.0f;
+		if (m->x < 1.0f) m->x = 1.0f;
+		if (m->x > WX - 1.0f) m->x = WX - 1.0f;
+		if (m->z < 1.0f) m->z = 1.0f;
+		if (m->z > WZ - 1.0f) m->z = WZ - 1.0f;
 		if (m->y < 0.0f) m->y = 0.0f;
 
 		/* contact damage */
