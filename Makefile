@@ -33,12 +33,10 @@ CFLAGS := -g -Wall -O2 \
           $(ARCH) $(INCLUDE) -DARM9
 CXXFLAGS := $(CFLAGS) -fno-rtti -fno-exceptions
 ASFLAGS  := -g $(ARCH)
+LDFLAGS   = -specs=ds_arm9.specs -g $(ARCH) -Wl,-Map,$(notdir $*.map)
 
-LDFLAGS = -specs=ds_arm9.specs -g $(ARCH) -Wl,-Map,$(notdir $*.map)
-
-# Link libnds and the standard math library.
-# main.c uses sinf(), cosf() and floorf().
-LIBS := -lnds9 -lm
+# libfat for SD-card world saves, libnds9 for DS hardware, libm for sinf/cosf/floorf
+LIBS := -lfat -lnds9 -lm
 
 #---------------------------------------------------------------------------------
 # list of directories containing libraries, this must be the top level containing
